@@ -1,23 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import Form from './components/Form';
+import StepTwo from './components/StepTwo';
+import Footer from './components/Footer';
+import { useState } from "react";
 
 function App() {
+const [name, setName] = useState("");
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+const [confirmPassword, setConfirmPassword] = useState("");
+const [valid, setValid] = useState(false); // Password ok ?
+const [submit, setSubmit] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">    
+      {!valid ? (
+      <Form 
+        stateName={name} setStateName={setName}
+        stateEmail={email} setStateEmail={setEmail}
+        statePassword={password} setStatePassword={setPassword}
+        stateConfirmPassword={confirmPassword} setStateConfirmPassword={setConfirmPassword}
+        stateValid={valid} setStateValid={setValid}
+        stateSubmit={submit} setStateSubmit={setSubmit}
+      />
+      ) : (
+      <StepTwo 
+        setStateValid={setValid}
+        name={name}
+        email={email}
+        password={password}
+        />
+      )}
+      <Footer />
     </div>
   );
 }

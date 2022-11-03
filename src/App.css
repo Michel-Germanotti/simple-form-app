@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+body{
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  width: 1024px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+form input {
+  width: 300px;
+  border: 1px solid #d3d3d3;
+  outline: none;
+  height: 45px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #fcf9f9;
+  padding-left: 10px;
+  margin: 5px 0 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.submit-button {
+  color: #fff;
+  background-color: #5c47d3;
+  border: 1px solid #5c47d3;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.results{
+  display: flex;
+  flex-direction: column;
+}
+
+.results>div {
+  width: 250px;
+  background-color: #f2f2f2;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.back-button{
+  width: 250px;
+  outline: none;
+  height: 45px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.back-button, .submit-button {
+    color: #fff;
+    background-color: #5c47d3;
+    border: 1px solid #5c47d3;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.footer> a{
+  text-decoration: none;
+  color: #000;
+  font-weight: 900;
 }
